@@ -27,27 +27,27 @@ public class Pedidorepositorio {
         return pedidos;
     }
 
-    public Pedido pedidopelocod (int cod)
-    {
+    public Pedido pedidopelocod(int id){
         for (Pedido aux : pedidos) {
-            if (aux.getCodigo() == cod) {
+            if (aux.getCodigo() == id) {
                 return aux;
             }
         }
+        return null;
     }
 
     public Pedido save(Pedido Pedido)
     {
         Pedido.setCodigo(cod++);
         Pedido.setDataPedido(new Date ());
-        Pedido.add(Pedido);
+        pedidos.add(Pedido);
         return Pedido;
     }
 
-    public Void remove (int codigo);
+    public void remove(int codigo)
     {
         Pedido PedidoR = pedidopelocod(cod);
-        Pedido.remove(PedidoR);
+        pedidos.remove(PedidoR);
         
     }
 
